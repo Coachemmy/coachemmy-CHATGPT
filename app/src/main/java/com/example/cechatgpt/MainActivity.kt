@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getResponse(question: String, callback: (String) -> Unit) {
-        val apiKeys = "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"
+        val apiKeys = "ENTER YOUR API KEYS HERE"
         val url = "https://api.openai.com/v1/engines/text-davinci-003/completions"
         val prompt = if (question.endsWith("?")) question else "$question?"
         val requestBody = """
