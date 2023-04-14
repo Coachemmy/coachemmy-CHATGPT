@@ -31,10 +31,16 @@
         android:layout_marginBottom="20dp"
         android:text="Submit" />
 
-    <TextView
-        android:id="@+id/txtResponse"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Your response will appear here"
-        android:textSize="20sp" />
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/txtResponse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your response will appear here"
+            android:textSize="20sp" />
+    </ScrollView>
+
 </LinearLayout>

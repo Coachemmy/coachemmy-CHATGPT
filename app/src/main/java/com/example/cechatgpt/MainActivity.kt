@@ -26,10 +26,12 @@ class MainActivity : AppCompatActivity() {
         btnSubmit.setOnClickListener {
             val question = etQuestion.text.toString().trim()
             if (question.isNotEmpty()){
+                btnSubmit.setBackgroundResource(R.drawable.green_button_background)
                 getResponse(question){response ->
                     runOnUiThread {
                         txtResponse.text = response
                         etQuestion.text.clear()
+                        btnSubmit.setBackgroundResource(R.drawable.default_button_background)
                     }
                 }
             }
@@ -37,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getResponse(question: String, callback: (String) -> Unit) {
-        val apiKeys = "ENTER YOUR API KEYS HERE"
+        val apiKeys = "ENTER OPENAPI KEY HERE"
         val url = "https://api.openai.com/v1/engines/text-davinci-003/completions"
         val prompt = if (question.endsWith("?")) question else "$question?"
         val requestBody = """
